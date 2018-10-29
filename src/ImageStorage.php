@@ -314,7 +314,7 @@ class ImageStorage
 
 			$_image->resize($size[0], $size[1], $flag);
 
-			$_image->sharpen()->save(
+			$_image->save(
 				implode('/', [$this->data_path, $identifier]),
 				$quality
 			);
