@@ -388,7 +388,7 @@ class ImageStorage
 		/**
 		 * Define path to parent directory of saved image
 		 */
-		$prefix = substr($checksum, 0, 2).'/'.substr($checksum, 2, 4);
+		$prefix = substr($checksum, 0, 3);
 		$dir = implode('/', [$this->data_path, $namespace, $prefix]);
 
 		@mkdir($dir, $this->mask, TRUE); // Directory may exist
