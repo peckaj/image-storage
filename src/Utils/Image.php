@@ -10,6 +10,11 @@ namespace Ublaboo\ImageStorage\Utils;
  */
 class Image extends \Nette\Utils\Image
 {
+	protected static $formats = [self::JPEG => 'jpeg', self::PNG => 'png', self::GIF => 'gif', self::WEBP => 'webp'];
+
+	/** @var resource */
+	protected $image;
+
 	/**
 	 * Crops image.
 	 * @param  mixed  x-offset in pixels or percent
