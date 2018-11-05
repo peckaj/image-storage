@@ -33,7 +33,7 @@ class Image extends \Nette\Utils\Image
 //		} else {
 			$newImage = static::fromBlank($r['width'], $r['height'], self::RGB(0, 0, 0, 127))->getImageResource();
 			imagecopy($newImage, $this->getImageResource(), 0, 0, $r['x'], $r['y'], $r['width'], $r['height']);
-			$this->image = $newImage;
+			$this->setImageResource($newImage);
 //		}
 		return $this;
 	}
