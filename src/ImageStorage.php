@@ -294,7 +294,7 @@ class ImageStorage
 				return new Image(NULL, '#', '#', 'Can not find image');
 			}
 
-			$_image = \Ublaboo\ImageStorage\Utils\Image::fromFile($file);
+			$_image = Nette\Utils\Image::fromFile($file);
 
 			if ($script->hasCrop() && !$isNoImage) {
 				call_user_func_array([$_image, 'crop'], $script->crop);
@@ -355,7 +355,7 @@ class ImageStorage
 				}
 
 				$data = base64_decode(require __DIR__ . '/NoImageSource.php');
-				$_image = \Ublaboo\ImageStorage\Utils\Image::fromString($data);
+				$_image = Nette\Utils\Image::fromString($data);
 				$_image->save($new_path, $script->quality ?: $this->quality);
 			}
 
