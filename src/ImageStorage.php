@@ -388,7 +388,10 @@ class ImageStorage
 		/**
 		 * Define path to parent directory of saved image
 		 */
-		$prefix = substr($checksum, 0, 3);
+		$prefix = substr($checksum, 0, 4);
+		$prefix2 = Nette\Utils\Random::generate(4);
+		$prefix3 = Nette\Utils\Random::generate(4);
+		$prefix = implode('/',[$prefix,$prefix2,$prefix3]);
 		$dir = implode('/', [$this->data_path, $namespace, $prefix]);
 
 		@mkdir($dir, $this->mask, TRUE); // Directory may exist
